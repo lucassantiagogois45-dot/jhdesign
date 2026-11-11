@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102c55">
+  <meta name="description" content="JH Design — criação de artes, identidade visual, edição de vídeos e gestão de redes sociais.">
+  <title>JH DESIGN | Sua marca em destaque</title>
+  <style>
+    :root {
+      --navy: #102c55;
+      --blue: #1769c2;
+      --blue-light: #eaf3ff;
+      --orange: #ff8737;
+      --ink: #17263b;
+      --muted: #68778b;
+      --white: #fff;
+      --line: #e7edf5;
+      --shadow: 0 22px 60px rgba(16,44,85,.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: #fff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    .topbar { padding: 18px 0; background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:11px; font-weight:900; letter-spacing:.08em; color:var(--navy); }
+    .brand-mark { width:39px; height:39px; border-radius:13px; display:grid; place-items:center; color:white; font-size:17px; font-weight:900; background:linear-gradient(135deg,var(--blue),var(--orange)); box-shadow:0 7px 18px rgba(23,105,194,.22); }
+    .brand small { display:block; font-size:9px; letter-spacing:.22em; color:var(--muted); margin-top:2px; }
+    .navlinks { display:flex; align-items:center; gap:27px; font-size:13px; font-weight:700; color:#53647a; }
+    .navlinks a:hover { color:var(--blue); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; border:0; border-radius:999px; padding:14px 21px; background:var(--orange); color:#fff; font-size:13px; font-weight:800; box-shadow:0 10px 24px rgba(255,135,55,.24); transition:.2s; }
+    .btn:hover { transform:translateY(-2px); box-shadow:0 14px 28px rgba(255,135,55,.3); }
+    .btn.blue { background:var(--blue); box-shadow:0 10px 24px rgba(23,105,194,.2); }
+    .hero { overflow:hidden; position:relative; padding:100px 0 92px; background:linear-gradient(125deg,#f5f9ff 0%,#fff 56%,#fff4eb 100%); }
+    .hero:before,.hero:after { content:""; position:absolute; border-radius:50%; pointer-events:none; }
+    .hero:before { width:420px;height:420px;right:-160px;top:-180px;background:rgba(23,105,194,.08); }
+    .hero:after { width:270px;height:270px;left:-130px;bottom:-180px;background:rgba(255,135,55,.10); }
+    .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.12fr .88fr; align-items:center; gap:55px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; color:var(--blue); background:#eaf3ff; border:1px solid #d8e9ff; border-radius:99px; padding:8px 13px; font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .dot { width:7px;height:7px;border-radius:50%;background:var(--orange); }
+    h1 { margin:22px 0 18px; max-width:650px; color:var(--navy); font-size:clamp(42px,6vw,68px); line-height:1.02; letter-spacing:-.055em; }
+    h1 span { color:var(--blue); }
+    .hero p { max-width:540px; color:var(--muted); font-size:17px; line-height:1.75; margin:0 0 28px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .hero-note { margin-top:22px; font-size:12px; color:#8794a5; }
+    .visual { min-height:390px; position:relative; display:grid; place-items:center; }
+    .visual-card { width:min(100%,390px); aspect-ratio:1/1; border-radius:34px; background:linear-gradient(145deg,var(--navy),#174b88); box-shadow:0 30px 70px rgba(16,44,85,.25); position:relative; overflow:hidden; padding:30px; color:white; transform:rotate(2deg); }
+    .visual-card:before { content:""; position:absolute; width:270px;height:270px;right:-80px;top:-85px;border-radius:50%;border:38px solid rgba(255,255,255,.08); }
+    .visual-card:after { content:""; position:absolute; width:170px;height:170px;left:-75px;bottom:-85px;border-radius:50%;background:rgba(255,135,55,.95); }
+    .visual-label { position:relative;z-index:1;font-size:11px;letter-spacing:.2em;font-weight:800;opacity:.8; }
+    .visual-title { position:relative;z-index:1;margin-top:65px;font-size:clamp(43px,5vw,61px);font-weight:950;line-height:.9;letter-spacing:-.06em; }
+    .visual-title span { color:#ffad72; }
+    .visual-sub { position:relative;z-index:1;margin-top:20px;font-size:12px;letter-spacing:.15em;text-transform:uppercase; }
+    .floating { position:absolute; z-index:2; background:white; border:1px solid var(--line); border-radius:17px; padding:14px 17px; box-shadow:var(--shadow); font-size:12px; font-weight:800; color:var(--navy); }
+    .floating.one { top:34px;left:-8px; transform:rotate(-5deg); }
+    .floating.two { bottom:35px;right:-8px; transform:rotate(4deg); }
+    .floating b { color:var(--orange); font-size:19px; margin-right:7px; vertical-align:middle; }
+    section { padding:86px 0; }
+    .section-head { max-width:650px; margin:0 auto 42px; text-align:center; }
+    .section-kicker { color:var(--orange); font-size:11px; font-weight:900; letter-spacing:.17em; text-transform:uppercase; }
+    h2 { margin:12px 0; color:var(--navy); font-size:clamp(30px,4vw,43px); letter-spacing:-.04em; }
+    .section-head p { margin:0; color:var(--muted); line-height:1.7; }
+    .services { display:grid; grid-template-columns:repeat(4,1fr); gap:17px; }
+    .service { border:1px solid var(--line); border-radius:22px; padding:25px 22px; background:white; transition:.22s; }
+    .service:hover { transform:translateY(-6px); box-shadow:var(--shadow); border-color:#d5e6fb; }
+    .service-icon { width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:var(--blue-light);color:var(--blue);font-size:22px;margin-bottom:22px; }
+    .service:nth-child(even) .service-icon { background:#fff0e6;color:#ed762b; }
+    .service h3 { margin:0 0 10px; color:var(--navy); font-size:17px; }
+    .service p { margin:0; color:var(--muted); font-size:13px; line-height:1.7; }
+    .about { background:#f6f9fd; }
+    .about-grid { display:grid; grid-template-columns:.9fr 1.1fr; align-items:center; gap:65px; }
+    .about-art { min-height:300px; border-radius:28px; background:linear-gradient(145deg,#1769c2,#102c55); position:relative; overflow:hidden; display:grid;place-items:center; }
+    .about-art:before { content:"";position:absolute;width:260px;height:260px;border:35px solid rgba(255,255,255,.12);border-radius:50%;left:-80px;top:-80px; }
+    .about-art:after { content:"";position:absolute;width:180px;height:180px;background:var(--orange);border-radius:50%;right:-60px;bottom:-70px; }
+    .about-monogram { position:relative;z-index:1;color:#fff;font-weight:950;font-size:94px;letter-spacing:-.1em; }
+    .about-copy h2 { margin-top:12px; }
+    .about-copy p { color:var(--muted);line-height:1.85;font-size:15px; }
+    .pill-row { display:flex;flex-wrap:wrap;gap:9px;margin-top:22px; }
+    .pill { padding:9px 13px;border-radius:99px;background:white;border:1px solid var(--line);font-size:11px;font-weight:800;color:var(--navy); }
+    .cta { padding:0 0 86px; background:#f6f9fd; }
+    .cta-panel { border-radius:28px; padding:48px; color:white; background:linear-gradient(110deg,#102c55,#1769c2); position:relative; overflow:hidden; display:flex;justify-content:space-between;align-items:center;gap:25px; }
+    .cta-panel:after { content:"";position:absolute;width:280px;height:280px;border:40px solid rgba(255,255,255,.08);border-radius:50%;right:20%;top:-190px; }
+    .cta-panel h2 { color:white; margin:0 0 9px; position:relative;z-index:1; }
+    .cta-panel p { margin:0;color:rgba(255,255,255,.76);font-size:14px;position:relative;z-index:1; }
+    .cta-panel .btn { position:relative;z-index:1;white-space:nowrap; }
+    footer { padding:27px 0; border-top:1px solid var(--line); }
+    .footer-inner { display:flex;justify-content:space-between;align-items:center;gap:20px; }
+    .copyright { color:#8a97a8;font-size:11px; }
+    .social { color:var(--blue);font-size:13px;font-weight:800; }
+    @media (max-width:850px) {
+      .hero-grid,.about-grid { grid-template-columns:1fr; gap:35px; }
+      .hero { padding:72px 0 65px; }
+      .visual { min-height:340px; }
+      .visual-card { width:min(82%,360px); }
+      .services { grid-template-columns:repeat(2,1fr); }
+      .about-art { min-height:240px; }
+    }
+    @media (max-width:560px) {
+      .container { width:min(100% - 30px,1120px); }
+      .navlinks { display:none; }
+      .nav > .btn { padding:11px 14px;font-size:11px; }
+      .hero p { font-size:15px; }
+      section { padding:66px 0; }
+      .services { grid-template-columns:1fr; }
+      .service { padding:22px; }
+      .cta-panel { padding:30px 24px; align-items:flex-start; flex-direction:column; }
+      .footer-inner { flex-direction:column;align-items:flex-start; }
+      .floating.one { left:0; }
+      .floating.two { right:0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="JH Design início">
+        <span class="brand-mark">JH</span>
+        <span>JH DESIGN<small>CRIATIVIDADE EM CADA DETALHE</small></span>
+      </a>
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+      <a class="btn" href="https://www.instagram.com/jhdesignmkt/" target="_blank" rel="noopener noreferrer">Fale conosco ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> DESIGN • CRIATIVIDADE • ESTRATÉGIA</span>
+          <h1>Sua marca merece <span>se destacar.</span></h1>
+          <p>Ideias ganham forma, marcas ganham identidade e conteúdos ganham vida. A JH Design transforma sua presença digital em algo marcante.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://www.instagram.com/jhdesignmkt/" target="_blank" rel="noopener noreferrer">Solicitar orçamento ↗</a>
+            <a class="btn blue" href="#servicos">Conhecer serviços</a>
+          </div>
+          <div class="hero-note">Atendimento pelo Instagram · Projetos sob medida</div>
+        </div>
+        <div class="visual" aria-label="Arte gráfica da JH Design">
+          <div class="floating one"><b>✦</b> Ideias que conectam</div>
+          <div class="visual-card">
+            <div class="visual-label">JH DESIGN / EST. 2026</div>
+            <div class="visual-title">IDEIAS<br><span>EM</span><br>DESTAQUE.</div>
+            <div class="visual-sub">Sua presença. Sua identidade.</div>
+          </div>
+          <div class="floating two"><b>↗</b> Sua marca em movimento</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">O que fazemos</div>
+          <h2>Serviços para fortalecer sua marca</h2>
+          <p>Soluções criativas para comunicar melhor, construir identidade e aproximar sua marca do público.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <div class="service-icon">✳</div>
+            <h3>Criação de artes</h3>
+            <p>Posts, stories e materiais visuais pensados para chamar atenção e comunicar sua mensagem.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">◈</div>
+            <h3>Identidade visual</h3>
+            <p>Uma linguagem visual consistente para transmitir a personalidade e os valores da sua marca.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">▶</div>
+            <h3>Edição de vídeos</h3>
+            <p>Vídeos dinâmicos e bem construídos para apresentar ideias, produtos e experiências.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">◎</div>
+            <h3>Gestão de redes sociais</h3>
+            <p>Organização e cuidado com sua presença digital para manter sua comunicação ativa e alinhada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="container about-grid">
+        <div class="about-art"><div class="about-monogram">JH.</div></div>
+        <div class="about-copy">
+          <div class="section-kicker">Sobre a JH Design</div>
+          <h2>Criatividade com propósito.</h2>
+          <p>Acreditamos que um bom design vai além da aparência: ele comunica, cria conexão e ajuda sua marca a ser lembrada. Cada projeto é desenvolvido com atenção aos detalhes e foco na sua identidade.</p>
+          <div class="pill-row">
+            <span class="pill">Design criativo</span>
+            <span class="pill">Identidade</span>
+            <span class="pill">Conteúdo digital</span>
+            <span class="pill">Comunicação visual</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <h2>Vamos tirar sua ideia do papel?</h2>
+            <p>Entre em contato e conte um pouco sobre o seu projeto.</p>
+          </div>
+          <a class="btn" href="https://www.instagram.com/jhdesignmkt/" target="_blank" rel="noopener noreferrer">Conversar no Instagram ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#inicio"><span class="brand-mark">JH</span><span>JH DESIGN<small>CRIATIVIDADE EM CADA DETALHE</small></span></a>
+      <span class="copyright">© 2026 JH Design. Todos os direitos reservados.</span>
+      <a class="social" href="https://www.instagram.com/jhdesignmkt/" target="_blank" rel="noopener noreferrer">@jhdesignmkt ↗</a>
+    </div>
+  </footer>
+</body>
+</html>
